@@ -6,4 +6,12 @@ if(${BUILD_NODEJS})
     include(cmake/SuperBuild_NodeJS.cmake)
 endif(${BUILD_NODEJS})
 
+message("NodeJS binary is installed at ${NODE_EXE_PATH}")
 
+set(BUILD_HELLOWORLD False CACHE BOOL "Build hello.py")
+if (${BUILD_HELLOWORLD})
+    add_subdirectory(py)
+    option(BUILD_HELLOWORLD_DEPS "Build helloworld deps" OFF)
+else()
+    unset(BUILD_HELLOWORLD_DEPS CACHE)
+endif()
