@@ -9,6 +9,10 @@ if (APPLE)
 endif()
 
 set (NODE_ROOT_DIR ${CMAKE_BINARY_DIR}/nodejs)
+
+# The below line occurs an error; there is no PARENT.
+# set (NODE_BIN_DIR ${NODE_ROOT_DIR}/bin PARENT_SCOPE)
+# even without PARENT_SCOPE, the variable is accessible from the includer
 set (NODE_BIN_DIR ${NODE_ROOT_DIR}/bin)
 set (NODE_EXECUTABLE ${NODE_BIN_DIR}/node CACHE string "NodeJS executable path")
 

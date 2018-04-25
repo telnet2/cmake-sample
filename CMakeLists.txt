@@ -6,7 +6,9 @@ if(${BUILD_NODEJS})
     include(cmake/SuperBuild_NodeJS.cmake)
 endif(${BUILD_NODEJS})
 
-message("NodeJS binary is installed at ${NODE_EXE_PATH}")
+message("NodeJS is installed at ${NODE_ROOT_DIR}")
+message("NodeJS is installed at ${NODE_BIN_DIR}")
+message("NodeJS binary is installed at ${NODE_EXECUTABLE}")
 
 set(BUILD_HELLOWORLD False CACHE BOOL "Build hello.py")
 if (${BUILD_HELLOWORLD})
